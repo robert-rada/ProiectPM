@@ -41,7 +41,7 @@ void initPlayer(Player *player, uint8_t id)
 	player->ball.vy = 0;
 	player->ball.max_speed = 5;
 	player->ball.dec = 0.3;
-	player->ball.mass = 5;
+	player->ball.mass = 2;
 	
 	player->kick = 0;
 }

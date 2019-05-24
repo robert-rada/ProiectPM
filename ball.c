@@ -16,8 +16,8 @@ void initBall(Ball *ball)
 	ball->vx = 0;
 	ball->vy = 0;	
 	
-	ball->max_speed = 10;
-	ball->dec = 0.05;
+	ball->max_speed = 8;
+	ball->dec = 0.1;
 	ball->mass = 1;
 }
 
@@ -190,11 +190,11 @@ uint8_t collision(Ball *ball0, Ball *ball1)
 	double v2y_x = (ball1->vx * axis1_x + ball1->vy * axis1_y) * axis1_x;
 	double v2y_y = (ball1->vx * axis1_x + ball1->vy * axis1_y) * axis1_y;
 	
-	ball0->vx = v1x_x + v2y_x;
-	ball0->vy = v1x_y + v2y_y;
+	ball0->vx = v1x_x + v2y_x * ball1->mass / ball0->mass;
+	ball0->vy = v1x_y + v2y_y * ball1->mass / ball0->mass;
 	
-	ball1->vx = v2x_x + v1y_x;
-	ball1->vy = v2x_y + v1y_y;
+	ball1->vx = v2x_x + v1y_x * ball0->mass / ball1->mass;
+	ball1->vy = v2x_y + v1y_y * ball0->mass / ball1->mass;
 	
 	return 1;
 }

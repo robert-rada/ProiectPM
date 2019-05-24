@@ -141,7 +141,7 @@ void startGame()
 	
 	uint8_t player0_score = 0, player1_score = 0;
 	
-	initClock(20);
+	initClock(120);
 	
 	resetGame();
 	
