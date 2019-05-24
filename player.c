@@ -9,6 +9,7 @@
 #include "graphics.h"
 #include "input.h"
 #include "adc.h"
+#include "sound.h"
 
 void initPlayer(Player *player, uint8_t id)
 {
